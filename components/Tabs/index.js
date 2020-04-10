@@ -21,21 +21,19 @@ const tabBuilder = (topic) => {
      return tab
 }
 
-
-
-
-
 const getTopics = () => {
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
 .then(
      response => {
+          //make the array for the topics
           const newTopics = response.data.topics
+          //loop over the array, and build a tab for each one
           newTopics.forEach(topic => {
             const topicTab = tabBuilder(topic)
+            //make sure the tabs get added to the DOM
                topics.appendChild(topicTab)
           })
      }
-
 )
 .catch(
        //here goes a callback that takes an error
