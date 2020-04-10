@@ -262,6 +262,7 @@ body {
   position: relative;
   overflow: hidden;
   margin-top: 16px;
+  transform-style: preserve-3d;
 }
 @media (min-width: 1200px) {
   .carousel {
@@ -302,4 +303,7 @@ body {
 .carousel img {
   width: 100%;
   display: none;
+}
+.carousel .show {
+  display: block;
 }
