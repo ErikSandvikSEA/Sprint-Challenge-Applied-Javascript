@@ -54,3 +54,22 @@ const cardBuilder = (object) => {
 
      return card
 }
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+     .then(
+          response => {
+               const articleObjects = response.data.articles        
+               // console.log(articleObjects)   
+               for(topic in articleObjects){
+                    const articles = articleObjects[topic]
+                    articles.forEach(article => {
+                       const card =  cardBuilder(article)
+                       cardContainer.appendChild(card)
+                    })
+               }   
+          }
+     )
+     .catch(
+          console.log('error')
+     )
+
