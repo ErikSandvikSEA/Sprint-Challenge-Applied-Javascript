@@ -28,7 +28,7 @@ const carouselBuilder = () => {
   const turntable = document.createElement('img')
   const rightButton = document.createElement('div')
 
-  carousel.appendChild(leftButton)
+  // carousel.appendChild(leftButton)
   carousel.appendChild(mountain)
   carousel.appendChild(computer)
   carousel.appendChild(trees)
@@ -36,7 +36,7 @@ const carouselBuilder = () => {
   carousel.appendChild(rightButton)
 
   carousel.classList.add('carousel')
-  leftButton.classList.add('left-button')
+  // leftButton.classList.add('left-button')
   rightButton.classList.add('right-button')
   // mountain.classList.add('show')
 
@@ -45,36 +45,37 @@ const carouselBuilder = () => {
   computer.src = "./assets/carousel/computer.jpeg"
   trees.src = "./assets/carousel/trees.jpeg"
   turntable.src = "./assets/carousel/turntable.jpeg"
-  leftButton.textContent = ' ⇦ '
+  // leftButton.textContent = ' ⇦ '
   rightButton.textContent = ' ⇨ '
 
   carouselContainer.appendChild(carousel)
 
   carouselArray = [mountain, computer, trees, turntable]
-  reverseArray = carouselArray.reverse()
 
-  currentIndex = 0
-  reverseCurrentIndex = 0
+
+  let currentIndex = 0
+  
 
   rightButton.addEventListener('click', function () {
-
+    currentIndex++
       carouselArray[currentIndex].classList.add('show')
       if(currentIndex > 0){
         carouselArray[currentIndex - 1].classList.remove('show')
         carouselArray.push(carouselArray[currentIndex -1])
       } 
-      currentIndex++
     })
-    leftButton.addEventListener('click', function () {
 
-      reverseArray[reverseCurrentIndex].classList.add('show')
+    // leftButton.addEventListener('click', function () {
+    // if(currentIndex !== 0){
+    // currentIndex--}
+    //   reverseArray[reverseCurrentIndex].classList.add('show')
+    //   reverseCurrentIndex--
+    //   if(reverseCurrentIndex > 0){
+    //     reverseArray[reverseCurrentIndex - 1].classList.remove('show')
+    //     reverseArray.push(reverseArray[reverseCurrentIndex -1])
+    //   } 
       
-      if(reverseCurrentIndex > 0){
-        reverseArray[reverseCurrentIndex - 1].classList.remove('show')
-        reverseArray.push(reverseArray[reverseCurrentIndex -1])
-      } 
-      reverseCurrentIndex++
-    })
+    // })
 }
 
 
