@@ -38,7 +38,7 @@ const carouselBuilder = () => {
   carousel.classList.add('carousel')
   // leftButton.classList.add('left-button')
   rightButton.classList.add('right-button')
-  // mountain.classList.add('show')
+  mountain.classList.add('show')
 
 
   mountain.src = './assets/carousel/mountains.jpeg'
